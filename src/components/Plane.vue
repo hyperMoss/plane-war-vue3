@@ -5,16 +5,22 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { PropType } from 'vue';
 import planeImg from '../assets/plane.png';
-import { setupPlane } from '../game';
+import { Plane } from '../game';
 
-const data = reactive({});
-
-const plane = setupPlane(data);
-plane.speed = 10;
+const { plane } = defineProps({
+  plane: {
+    type: Object as PropType<Plane>,
+    required: true,
+  },
+});
 
 function move(e) {
+  if (e.code === 'Space') {
+    plane.attack();
+    // return;
+  }
   switch (e.code) {
     case 'ArrowUp':
       plane.moveUp();
