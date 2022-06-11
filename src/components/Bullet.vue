@@ -1,16 +1,18 @@
 <template>
-  <Container width="30" height="30">
+  <Container :x="bullet.x" :y="bullet.y" :width="30" :height="30">
     <Sprite :texture="bulletImg"></Sprite>
   </Container>
 </template>
 
 <script setup lang="ts">
-import bulletImg from '../assets/bullet.png';
+import { PropType } from 'vue';
+import bulletImg from '../assets/icon.png';
+import { Bullet } from '../game';
 
-// const { bullet } = defineProps({
-//   plane: {
-//     type: Object,
-//     required: true,
-//   },
-// });
+defineProps({
+  bullet: {
+    type: Object as PropType<Bullet>,
+    required: true,
+  },
+});
 </script>

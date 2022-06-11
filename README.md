@@ -9,4 +9,4 @@
    - our plane
    - shoot
    - enemy
-   - crash
+   - crash(plane, enemy)

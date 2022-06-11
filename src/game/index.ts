@@ -1,7 +1,13 @@
 import { Application } from 'pixi.js';
+import { Bullet } from './Bullet';
+import { EnemyPlane, initEnemyPlanes, runEnemyPlanes } from './EnemyPlane';
 import { Plane, setupPlane } from './Plane'
 
 export * from './Plane'
+export * from './Bullet'
+export * from './EnemyPlane'
+
+
 
 export const game = new Application({
   width: 500,
@@ -10,22 +16,26 @@ export const game = new Application({
 
 document.body.append(game.view);
 
+export function initGame(_plane, bullets: Bullet[], enemyPlanes: EnemyPlane[]) {
 
-export function initGame(_plane, bullets) {
   const plane = setupPlane(_plane, bullets)
 
-  mainTicker(plane)
+  initEnemyPlanes(enemyPlanes)
+
+  mainTicker(plane, enemyPlanes)
   return {
     plane,
-    bullets
+    bullets,
+    enemyPlanes
   }
 }
 
-
-
-function mainTicker(_plane: Plane) {
+function mainTicker(plane: Plane, enemyPlanes: EnemyPlane[]) {
   game.ticker.add(() => {
 
-    _plane.run()
+    plane.run()
+
+    runEnemyPlanes(enemyPlanes)
+    fighting(plane, enemyPlanes)
   })
 }

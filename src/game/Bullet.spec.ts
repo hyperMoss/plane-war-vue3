@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import Bullet from './Bullet'
+import { Bullet } from './Bullet'
 
 
 describe('Bullet', () => {
