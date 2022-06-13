@@ -3,6 +3,8 @@ export class EnemyPlane {
   public y: number = 0
   public speed: number = 1
   public border: number = 0;
+  public width: number = 0
+  public height: number = 0
   // public onDestroy: any;
   constructor() {
   }

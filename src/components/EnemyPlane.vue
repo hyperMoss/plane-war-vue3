@@ -6,14 +6,17 @@
 
 <script setup lang="ts">
 import { PropType } from 'vue';
-import enemyPlaneImg from '../assets/bullet.png';
+import enemyPlaneImg from '../assets/icon.png';
 
 import { EnemyPlane } from '../game';
 
-defineProps({
+const { enemy } = defineProps({
   enemy: {
     type: Object as PropType<EnemyPlane>,
     required: true,
   },
 });
+
+enemy.width = 100;
+enemy.height = 100;
 </script>

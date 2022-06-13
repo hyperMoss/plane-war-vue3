@@ -1,6 +1,7 @@
 import { Application } from 'pixi.js';
 import { Bullet } from './Bullet';
 import { EnemyPlane, initEnemyPlanes, runEnemyPlanes } from './EnemyPlane';
+import { fighting } from './fighting';
 import { Plane, setupPlane } from './Plane'
 
 export * from './Plane'

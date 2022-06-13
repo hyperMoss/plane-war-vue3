@@ -9,10 +9,12 @@ import { PropType } from 'vue';
 import bulletImg from '../assets/icon.png';
 import { Bullet } from '../game';
 
-defineProps({
+const { bullet } = defineProps({
   bullet: {
     type: Object as PropType<Bullet>,
     required: true,
   },
 });
+bullet.width = 100;
+bullet.height = 100;
 </script>

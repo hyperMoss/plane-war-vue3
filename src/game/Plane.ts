@@ -3,6 +3,7 @@ import { Bullet } from './Bullet';
 
 
 export interface Plane {
+  bullets: Bullet[];
   x: number;
   y: number;
   speed: number;
@@ -15,8 +16,8 @@ export interface Plane {
 }
 
 const defaultOptions = {
-  y: 0,
-  x: 0,
+  y: 300,
+  x: 300,
   speed: 5,
 }
 

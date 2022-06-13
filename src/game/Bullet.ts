@@ -6,6 +6,8 @@ export class Bullet {
   public speed: number = 5;
   public border: number = 0;
   public onDestroy: any;
+  public width: number = 0
+  public height: number = 0
   constructor() {
 
   }
